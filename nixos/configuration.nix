@@ -33,7 +33,7 @@
   # default user pog
   users.users.mouthless = {
     isNormalUser = true;
-    inititalPassword = "mouthless";
+    initialPassword = "mouthless";
     extraGroups = [ "wheel" ];
   };
 

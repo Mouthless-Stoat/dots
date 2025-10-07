@@ -5,6 +5,12 @@
   home.username = "mouthless";
   home.homeDirectory = "/home/mouthless";
 
+
+  home.shellAliases = {
+    g = "lazygit";
+    gst = "git status";
+  };
+
   programs.git = {
     enable = true;
     aliases = {
