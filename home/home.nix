@@ -18,6 +18,8 @@
     };
   };
 
+  programs.lazygit.enable = true;
+
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
 }
 # vim:et:ts=2
