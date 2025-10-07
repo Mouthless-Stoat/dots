@@ -33,6 +33,7 @@
   # default user pog
   users.users.mouthless = {
     isNormalUser = true;
+    inititalPassword = "mouthless";
     extraGroups = [ "wheel" ];
   };
 
@@ -44,7 +45,7 @@
   # enable flakes and stuff
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # sistem package to be use in root
+  # system package to be use in root
   environment.systemPackages = with pkgs; [
     git
     vim
