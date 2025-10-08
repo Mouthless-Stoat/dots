@@ -6,6 +6,7 @@
   home.homeDirectory = "/home/mouthless";
 
 
+  programs.bash.enable = true;
   home.shellAliases = {
     g = "lazygit";
     gst = "git status";
