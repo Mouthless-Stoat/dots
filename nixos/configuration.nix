@@ -50,8 +50,14 @@
     git
     vim
     wget
+    alacritty
+    fuzzel
   ];
-  
+  fonts.packages = with pkgs; [
+    nerd-fonts.caskaydia-cove
+  ];
+
+  programs.niri.enable = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }

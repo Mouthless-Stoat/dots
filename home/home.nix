@@ -33,8 +33,11 @@
     defaultEditor = true;
     extraPackages = with pkgs; [ gcc ];
   };
+
   home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
   home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
+
+  home.file."${config.xdg.configHome}/niri/config.kdl".source = ./niri/config.kdl;
 
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
 }
