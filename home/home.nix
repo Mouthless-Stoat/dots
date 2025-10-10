@@ -1,17 +1,17 @@
-
-{config, pkgs, ...}:
+{config, pkgs, crabby-vim, ...}:
 
 {
   home.username = "mouthless";
   home.homeDirectory = "/home/mouthless";
 
-
   programs.bash.enable = true;
+
   home.shellAliases = {
     g = "lazygit";
     gst = "git status";
   };
 
+  # git config
   programs.git = {
     enable = true;
     aliases = {
@@ -24,9 +24,17 @@
       init.defaultBranch ="main";
     };
   };
-
   programs.lazygit.enable = true;
+
+  programs.neovim = {
+    enable = true;
+    vimAlias = true;
+    viAlias = true;
+    defaultEditor = true;
+    extraPackages = with pkgs; [ gcc ];
+  };
+  home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
+  home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
 
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
 }
-# vim:et:ts=2

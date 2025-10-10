@@ -7,20 +7,38 @@
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-  
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-      modules = [
-        ./nixos/configuration.nix
-        home-manager.nixosModules.home-manager 
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.users.mouthless = ./home/home.nix;
-        }
-      ];
+    crabby-vim = {
+      url = "github:Mouthless-Stoat/CrabbyVim";
     };
+
   };
+
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      crabby-vim,
+      ...
+    }:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./nixos/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.mouthless = ./home/home.nix;
+        home-manager.extraSpecialArgs = {
+          inherit crabby-vim;
+        };
+          }
+        ];
+      };
+    };
 }
 # vim:et:ts=2
