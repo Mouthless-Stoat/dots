@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1760076736,
-        "narHash": "sha256-SRJu0oyLhI8hxAWZ84IEp5O9LSgTAhk6xNYqhUV0R30=",
+        "lastModified": 1760125816,
+        "narHash": "sha256-fvKCoJGuLFdCen/CKhmXmiieCZNbIcSwhPv5+38mkq0=",
         "owner": "Mouthless-Stoat",
         "repo": "CrabbyVim",
-        "rev": "6dd1cada5a4ddff554fcb42e50c52c3f97191b51",
+        "rev": "d694aeaf00a20e6601f05746db714c9fcb254723",
         "type": "github"
       },
       "original": {
@@ -76,11 +76,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1759735786,
-        "narHash": "sha256-a0+h02lyP2KwSNrZz4wLJTu9ikujNsTWIC874Bv7IJ0=",
+        "lastModified": 1759994382,
+        "narHash": "sha256-wSK+3UkalDZRVHGCRikZ//CyZUJWDJkBDTQX1+G77Ow=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "20c4598c84a671783f741e02bf05cbfaf4907cff",
+        "rev": "5da4a26309e796daa7ffca72df93dbe53b8164c7",
         "type": "github"
       },
       "original": {
