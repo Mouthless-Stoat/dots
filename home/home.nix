@@ -1,4 +1,9 @@
-{config, pkgs, crabby-vim, ...}:
+{
+  config,
+  pkgs,
+  crabby-vim,
+  ...
+}:
 
 {
   home.username = "mouthless";
@@ -21,7 +26,7 @@
     userName = "Mouthless-Stoat";
     userEmail = "nphuyanh@outlook.com";
     extraConfig = {
-      init.defaultBranch ="main";
+      init.defaultBranch = "main";
     };
   };
   programs.lazygit.enable = true;
@@ -36,8 +41,6 @@
 
   home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
   home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
-
-  home.file."${config.xdg.configHome}/niri/config.kdl".source = ./niri/config.kdl;
 
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
 }

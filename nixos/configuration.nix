@@ -1,10 +1,15 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # boot option
   # this use grub so i can also dual boot window :D
@@ -39,25 +44,41 @@
 
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
   # enable flakes and stuff
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # system package to be use in root
   environment.systemPackages = with pkgs; [
     git
     vim
     wget
-    alacritty
+
+    nixfmt-rfc-style
+
+    kitty
     fuzzel
+    firefox
+    nyxt
+    at-spi2-core
+    mako
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-gnome
+    gnome-keyring
   ];
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
   ];
 
   programs.niri.enable = true;
+  programs.hyprland.enable = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }
