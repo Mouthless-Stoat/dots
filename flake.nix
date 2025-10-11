@@ -8,7 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     crabby-vim.url = "github:Mouthless-Stoat/CrabbyVim";
-    niri.url = "github:sodiboo/niri-flake";
   };
 
   outputs =
@@ -17,31 +16,16 @@
       nixpkgs,
       home-manager,
       crabby-vim,
-        niri,
       ...
     }:
     let
       system = "x86_64-linux";
     in
     {
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-tree;
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         modules = [
           ./nixos/configuration.nix
-          niri.nixosModules.niri
-          (
-            { pkgs, ... }:
-            {
-              nixpkgs.overlays = [ niri.overlays.niri ];
-              programs.niri.enable = true;
-              environment.variables.NIXOS_OZONE_WL = "1";
-              environment.systemPackages = with pkgs; [
-                wl-clipboard
-                wayland-utils
-                libsecret
-                cage
-              ];
-            }
-          )
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

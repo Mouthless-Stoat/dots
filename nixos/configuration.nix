@@ -63,22 +63,17 @@
 
     nixfmt-rfc-style
 
-    kitty
+    alacritty
     fuzzel
-    firefox
     nyxt
     at-spi2-core
-    mako
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-gnome
-    gnome-keyring
   ];
+
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
   ];
 
   programs.niri.enable = true;
-  programs.hyprland.enable = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }
