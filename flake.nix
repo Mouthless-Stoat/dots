@@ -2,12 +2,20 @@
   description = "Flakes to manage NixOS";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    crabby-vim.url = "github:Mouthless-Stoat/CrabbyVim";
+    crabby-vim = {
+      url = "github:Mouthless-Stoat/CrabbyVim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -16,6 +24,7 @@
       nixpkgs,
       home-manager,
       crabby-vim,
+      niri,
       ...
     }:
     let
@@ -31,10 +40,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.mouthless = ./home/home.nix;
-            home-manager.extraSpecialArgs = { inherit crabby-vim; };
+            home-manager.extraSpecialArgs = { inherit crabby-vim niri; };
           }
         ];
       };
     };
 }
-# vim:et:ts=2

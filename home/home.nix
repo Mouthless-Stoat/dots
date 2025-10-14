@@ -6,14 +6,27 @@
 }:
 
 {
+  imports = [ ./niri ];
   home.username = "mouthless";
   home.homeDirectory = "/home/mouthless";
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefew-dark";
+    };
+  };
+
+  home.packages = with pkgs; [
+    fzf
+    ripgrep
+  ];
 
   programs.bash.enable = true;
 
   home.shellAliases = {
     g = "lazygit";
     gst = "git status";
+    rebuild = "sudo nixos-rebuild";
   };
 
   # git config
@@ -41,6 +54,13 @@
 
   home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
   home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
+
+  programs.firefox.enable = true;
+  programs.vesktop.enable = true;
+
+  programs.rofi = {
+    enable = true;
+  };
 
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
 }

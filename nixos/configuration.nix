@@ -62,19 +62,13 @@
     wget
 
     nixfmt-rfc-style
-
-    alacritty
-    fuzzel
-    nyxt
-    at-spi2-core
   ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
   ];
 
-  programs.niri.enable = true;
+  programs.dconf.enable = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }
-# vi:et:ts=2
