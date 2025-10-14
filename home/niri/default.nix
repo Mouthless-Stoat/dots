@@ -17,15 +17,13 @@
       default-column-display = "tabbed";
       preset-column-widths = [
         { proportion = 1. / 3.; }
-        { proportion = 1. / 2.; }
         { proportion = 2. / 3.; }
-
-        # { fixed = 1920; }
       ];
     };
 
     binds = import ./bind.nix config.lib.niri.actions;
   };
+
   home.packages = with pkgs; [
     kitty
     rofi

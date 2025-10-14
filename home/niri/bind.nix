@@ -1,15 +1,20 @@
-action: with action; {
+action:
+with action;
+let
+  bind = title: action: {
+    inherit action;
+    hotkey-overlay.title = title;
+  };
+in
+{
   "Mod+Shift+Slash".action = show-hotkey-overlay;
 
-  "Mod+L".action = focus-column-or-monitor-right;
-  "Mod+L".hotkey-overlay.title = "󰜴 Focus right";
-  "Mod+H".action = focus-column-or-monitor-left;
-  "Mod+H".hotkey-overlay.title = "󰜱 Focus right";
+  "Mod+L" = bind "Focus right" focus-column-or-monitor-right;
+  "Mod+H" = bind "Focus right" focus-column-or-monitor-left;
+  "Mod+J" = bind "Focus down" focus-window-or-workspace-down;
+  "Mod+K" = bind "Focus up" focus-window-or-workspace-up;
 
-  "Mod+J".action = focus-window-or-workspace-down;
-  "Mod+J".hotkey-overlay.title = "󰜮 Focus down";
-  "Mod+K".action = focus-window-or-workspace-up;
-  "Mod+K".hotkey-overlay.title = "󰜷 Focus up";
+  # The movement keybind with shift will move the window and ctrl will do an alternate action
 
   "Mod+Shift+L".action = move-column-right-or-to-monitor-right;
   "Mod+Shift+H".action = move-column-left-or-to-monitor-left;
@@ -21,15 +26,12 @@ action: with action; {
   "Mod+Ctrl+Shift+L".action = move-column-to-monitor-right;
   "Mod+Ctrl+Shift+H".action = move-column-to-monitor-left;
 
-  "Mod+Q".action = close-window;
-  "Mod+O".action = toggle-overview;
+  "Mod+Q" = bind "Close Window" close-window;
+  "Mod+O" = bind "Toggle Overview" toggle-overview;
+  "Mod+S" = bind "Switch Preset" switch-preset-column-width;
+  "Mod+F" = bind "Maximize Column" maximize-column;
 
-  "Mod+T".action = spawn "kitty";
-  "Mod+T".hotkey-overlay.title = "  Open Terminal";
-  "Mod+R" = {
-    action = spawn-sh "rofi -show drun";
-    hotkey-overlay.title = "  App Launcher";
-  };
+  "Mod+T" = bind "Open Terminal" <| spawn "kitty";
+  "Mod+R" = bind "App Launcher" <| spawn-sh "rofi -show drun";
 
-  "Mod+S".action = switch-preset-column-width;
 }
