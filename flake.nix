@@ -35,6 +35,16 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         modules = [
           ./nixos/configuration.nix
+          niri.nixosModules.niri
+          (
+            { pkgs, ... }:
+            {
+              programs.niri = {
+                enable = true;
+                package = pkgs.niri;
+              };
+            }
+          )
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
