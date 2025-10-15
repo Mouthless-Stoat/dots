@@ -12,7 +12,7 @@
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
-      color-scheme = "prefew-dark";
+      color-scheme = "prefer-dark";
     };
   };
 
