@@ -53,7 +53,6 @@
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
-    "pipe-operators"
   ];
 
   # system package to be use in root

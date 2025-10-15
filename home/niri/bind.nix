@@ -31,7 +31,7 @@ in
   "Mod+S" = bind "Switch Preset" switch-preset-column-width;
   "Mod+F" = bind "Maximize Column" maximize-column;
 
-  "Mod+T" = bind "Open Terminal" <| spawn "kitty";
-  "Mod+R" = bind "App Launcher" <| spawn-sh "rofi -show drun";
+  "Mod+T" = bind "Open Terminal" (spawn "kitty");
+  "Mod+R" = bind "App Launcher" (spawn-sh "rofi -show drun");
 
 }
