@@ -19,6 +19,9 @@
   home.packages = with pkgs; [
     fzf
     ripgrep
+    git-credential-manager
+    pass
+    gnupg
   ];
 
   programs.bash.enable = true;
@@ -40,6 +43,8 @@
     userEmail = "nphuyanh@outlook.com";
     extraConfig = {
       init.defaultBranch = "main";
+      credential.helper = "manager";
+      credential.credentialStore = "plaintext";
     };
   };
   programs.lazygit.enable = true;
