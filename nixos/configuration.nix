@@ -68,6 +68,17 @@
     nerd-fonts.caskaydia-cove
   ];
 
+  fonts.fontconfig.defaultFonts =
+    let
+      cascadia = [ "Caskaydia Cove Nerd Font Mono" ];
+    in
+    {
+      serif = cascadia;
+      sansSerif = cascadia;
+      monospace = cascadia;
+      emoji = cascadia;
+    };
+
   programs.dconf.enable = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
