@@ -60,7 +60,7 @@
   home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
   home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
 
-  programs.qutebrowser.enable = true;
+  programs.firefox.enable = true;
   programs.vesktop.enable = true;
 
   programs.rofi = {
