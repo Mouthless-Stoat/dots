@@ -26,10 +26,14 @@ in
   "Mod+Ctrl+Shift+L".action = move-column-to-monitor-right;
   "Mod+Ctrl+Shift+H".action = move-column-to-monitor-left;
 
-  "Mod+Q" = bind "Close Window" close-window;
-  "Mod+O" = bind "Toggle Overview" toggle-overview;
-  "Mod+S" = bind "Switch Preset" switch-preset-column-width;
-  "Mod+F" = bind "Maximize Column" maximize-column;
+  "Mod+Q" = bind "Close window" close-window;
+  "Mod+O" = bind "Toggle overview" toggle-overview;
+  "Mod+S" = bind "Switch preset" switch-preset-column-width;
+  "Mod+F" = bind "Maximize column" maximize-column;
+  "Mod+W" = bind "Set width to half" (set-window-width "50%");
+
+  "Mod+Comma" = bind "Consume window" consume-window-into-column;
+  "Mod+Period" = bind "Expel window" expel-window-from-column;
 
   "Mod+T" = bind "Open Terminal" (spawn "kitty");
   "Mod+R" = bind "App Launcher" (spawn-sh "rofi -show drun");
