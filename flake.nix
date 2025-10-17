@@ -36,15 +36,6 @@
         modules = [
           ./nixos/configuration.nix
           niri.nixosModules.niri
-          (
-            { pkgs, ... }:
-            {
-              programs.niri = {
-                enable = true;
-                package = pkgs.niri;
-              };
-            }
-          )
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -52,6 +43,17 @@
             home-manager.users.mouthless = ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit crabby-vim niri; };
           }
+          (
+            { pkgs, ... }:
+            {
+              programs.niri = {
+                enable = true;
+                package = pkgs.niri; # Use the package that come with the nixpkgs
+              };
+              # for electron and chromium support.
+              environment.variables.NIXOS_OZONE_WL = "1";
+            }
+          )
         ];
       };
     };
