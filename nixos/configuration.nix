@@ -11,6 +11,16 @@
     ./hardware-configuration.nix
   ];
 
+  nixpkgs.config.allowUnfreePredicate =
+    pkgs:
+    builtins.elem (lib.getName pkgs) [
+      "steam"
+      "steam-original"
+      "steam-unwrapped"
+      "steam-run"
+      "steamcmd"
+    ];
+
   # boot option
   # this use grub so i can also dual boot window :D
   boot.loader = {
@@ -80,6 +90,7 @@
     };
 
   programs.dconf.enable = true;
+  programs.steam.enable = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }

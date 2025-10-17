@@ -7,6 +7,7 @@
 
 {
   imports = [ ./niri ];
+
   home.username = "mouthless";
   home.homeDirectory = "/home/mouthless";
 
@@ -22,6 +23,8 @@
     git-credential-manager
     pass
     gnupg
+    steam-tui
+    steamcmd
   ];
 
   programs.bash.enable = true;
@@ -29,7 +32,7 @@
   home.shellAliases = {
     g = "lazygit";
     gst = "git status";
-    rebuild = "sudo nixos-rebuild";
+    rebuild = "cd ~/dots && sudo nix fmt && sudo nixos-rebuild";
   };
 
   # git config
@@ -54,13 +57,19 @@
     vimAlias = true;
     viAlias = true;
     defaultEditor = true;
-    extraPackages = with pkgs; [ gcc ];
+    extraPackages = with pkgs; [ typst ];
   };
 
   home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
   home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    profiles.personal = {
+      isDefault = true;
+      extensions.force = true;
+    };
+  };
   programs.vesktop.enable = true;
 
   programs.rofi = {
