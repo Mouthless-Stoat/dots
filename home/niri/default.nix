@@ -1,10 +1,4 @@
-{
-  inputs,
-  pkgs,
-  config,
-  niri,
-  ...
-}:
+{ config, niri, ... }:
 {
   programs.niri.settings = {
     prefer-no-csd = true;
