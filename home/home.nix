@@ -1,12 +1,14 @@
 {
   config,
   pkgs,
-  crabby-vim,
   ...
 }:
 
 {
-  imports = [ ./niri ];
+  imports = [
+    ./niri
+    ./neovim
+  ];
 
   home.username = "mouthless";
   home.homeDirectory = "/home/mouthless";
@@ -25,6 +27,15 @@
     gnupg
     steam-tui
     steamcmd
+
+    typst
+    tinymist
+
+    fd
+    kitty
+    rofi
+    xwayland-satellite
+    brightnessctl
   ];
 
   programs.bash.enable = true;
@@ -33,6 +44,13 @@
     g = "lazygit";
     gst = "git status";
     rebuild = "cd ~/dots && sudo nix fmt && sudo nixos-rebuild";
+  };
+  programs.zoxide.enable = true;
+
+  programs.eza = {
+    enable = true;
+    icons = "always";
+    extraOptions = [ "-a" ];
   };
 
   # git config
@@ -51,17 +69,6 @@
     };
   };
   programs.lazygit.enable = true;
-
-  programs.neovim = {
-    enable = true;
-    vimAlias = true;
-    viAlias = true;
-    defaultEditor = true;
-    extraPackages = with pkgs; [ typst ];
-  };
-
-  home.file."${config.xdg.configHome}/nvim/lua".source = crabby-vim.packages.x86_64-linux.default;
-  home.file."${config.xdg.configHome}/nvim/init.lua".source = ./neovim/init.lua;
 
   programs.firefox = {
     enable = true;

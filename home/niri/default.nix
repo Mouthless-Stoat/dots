@@ -32,10 +32,4 @@
 
     binds = import ./bind.nix config.lib.niri.actions;
   };
-
-  home.packages = with pkgs; [
-    kitty
-    rofi
-    xwayland-satellite
-  ];
 }
