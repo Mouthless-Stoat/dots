@@ -1,5 +1,10 @@
-{ ... }:
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [
+    fzf
+    ripgrep
+    fd
+  ];
   programs.bash.enable = true;
 
   home.shellAliases = {
