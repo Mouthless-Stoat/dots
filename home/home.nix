@@ -5,6 +5,7 @@
     ./niri
     ./neovim
     ./git
+    ./firefox
   ];
 
   home.username = "mouthless";
@@ -33,13 +34,6 @@
     extraOptions = [ "-a" ];
   };
 
-  programs.firefox = {
-    enable = true;
-    profiles.personal = {
-      isDefault = true;
-      extensions.force = true;
-    };
-  };
   programs.vesktop.enable = true;
 
   programs.rofi = {
