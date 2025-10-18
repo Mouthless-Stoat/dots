@@ -40,7 +40,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.mouthless = ./home/home.nix;
+            home-manager.users.mouthless = ./home/mouthless;
             home-manager.extraSpecialArgs = { inherit crabby-vim niri; };
           }
           (

@@ -3,9 +3,9 @@
 {
   imports = [
     ./niri
-    ./neovim
-    ./git
-    ./firefox
+    ./neovim.nix
+    ./git.nix
+    ./firefox.nix
   ];
 
   home.username = "mouthless";
