@@ -12,8 +12,10 @@ in
   "XF86AudioMute".action = spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
   "XF86AudioMicMute".action = spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle";
 
-  "XF86MonBrightnessUp".action = spawn "brightnessctl" "--class=backlight" "set" "+10%";
-  "XF86MonBrightnessDown".action = spawn "brightnessctl" "--class=backlight" "set" "10%-";
+  "XF86MonBrightnessUp".action = spawn "brightnessctl" "--class=backlight" "set" "+5%";
+  "XF86MonBrightnessDown".action = spawn "brightnessctl" "--class=backlight" "set" "5%-";
+
+  "Print".action = screenshot;
 
   "Mod+Shift+Slash".action = show-hotkey-overlay;
 
