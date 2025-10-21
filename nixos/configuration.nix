@@ -76,6 +76,7 @@
 
   fonts.packages = with pkgs; [
     nerd-fonts.caskaydia-cove
+    fira-math
   ];
 
   fonts.fontconfig.defaultFonts =
