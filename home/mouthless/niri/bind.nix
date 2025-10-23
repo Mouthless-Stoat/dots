@@ -38,9 +38,11 @@ in
 
   "Mod+Q" = bind "Close window" close-window;
   "Mod+O" = bind "Toggle overview" toggle-overview;
-  "Mod+S" = bind "Switch preset" switch-preset-column-width;
-  "Mod+F" = bind "Maximize column" maximize-column;
-  "Mod+W" = bind "Set width to half" (set-window-width "50%");
+
+  "Mod+1" = bind "Set width to 1/3" (set-window-width "33.333%");
+  "Mod+2" = bind "Set width to 1/2" (set-window-width "50%");
+  "Mod+3" = bind "Set width to 2/3" (set-window-width "66.666%");
+  "Mod+4" = bind "Set width to full" (set-window-width "100%");
 
   "Mod+Comma" = bind "Consume window" consume-window-into-column;
   "Mod+Period" = bind "Expel window" expel-window-from-column;
