@@ -23,7 +23,17 @@
     };
   };
 
-  programs.vesktop.enable = true; # discord alternative
+  # discord alternative
+  programs.vesktop = {
+    enable = true;
+    settings = {
+      autoUpdate = false;
+      vencord = {
+        VolumeBooster.enable = true;
+        FakeNitro.enable = true;
+      };
+    };
+  };
   programs.rofi.enable = true; # app launcher
 
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
