@@ -33,8 +33,8 @@
         gaps-between-tabs = 16;
       };
       struts = {
-        left = 12;
-        right = 12;
+        left = 32;
+        right = 32;
       };
     };
 
