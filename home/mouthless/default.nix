@@ -7,6 +7,7 @@
     ./git.nix # git config and stuff
     ./firefox.nix # firefox
     ./bash.nix # shell command and stuff
+    ./quickshell
   ];
 
   # Basic feature
