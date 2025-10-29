@@ -24,10 +24,6 @@
       default-column-display = "tabbed";
       empty-workspace-above-first = true;
 
-      preset-column-widths = [
-        { proportion = 1. / 3.; }
-        { proportion = 2. / 3.; }
-      ];
       tab-indicator = {
         hide-when-single-tab = true;
         gaps-between-tabs = 16;

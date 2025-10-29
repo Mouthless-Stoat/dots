@@ -39,9 +39,9 @@ in
   "Mod+Q" = bind "Close window" close-window;
   "Mod+O" = bind "Toggle overview" toggle-overview;
 
-  "Mod+1" = bind "Set width to 1/3" (set-window-width "33.333%");
+  "Mod+1" = bind "Set width to 1/3" (set-window-width "33.33333%");
   "Mod+2" = bind "Set width to 1/2" (set-window-width "50%");
-  "Mod+3" = bind "Set width to 2/3" (set-window-width "66.666%");
+  "Mod+3" = bind "Set width to 2/3" (set-window-width "66.66667%");
   "Mod+4" = bind "Set width to full" (set-window-width "100%");
 
   "Mod+Comma" = bind "Consume window" consume-window-into-column;
