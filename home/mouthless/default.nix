@@ -28,9 +28,11 @@
     enable = true;
     settings = {
       autoUpdate = false;
+      disableMinSize = true;
       vencord = {
         VolumeBooster.enable = true;
         FakeNitro.enable = true;
+        WhoReacted.enable = true;
       };
     };
   };
