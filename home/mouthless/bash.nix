@@ -3,9 +3,18 @@
   home.packages = with pkgs; [
     fzf
     ripgrep
+
     fd
+    sd
   ];
-  programs.bash.enable = true;
+
+  programs.bash = {
+    enable = true;
+    historyControl = [
+      "erasedups"
+      "ignoreboth"
+    ];
+  };
 
   home.shellAliases = {
     g = "lazygit";
