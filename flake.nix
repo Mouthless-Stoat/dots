@@ -16,6 +16,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    terminal-wakatime = {
+      url = "github:hackclub/terminal-wakatime";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -25,6 +29,7 @@
       home-manager,
       crabby-vim,
       niri,
+      terminal-wakatime,
       ...
     }:
     let
@@ -41,7 +46,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.mouthless = ./home/mouthless;
-            home-manager.extraSpecialArgs = { inherit crabby-vim niri; };
+            home-manager.extraSpecialArgs = { inherit crabby-vim niri terminal-wakatime; };
           }
           (
             { pkgs, ... }:

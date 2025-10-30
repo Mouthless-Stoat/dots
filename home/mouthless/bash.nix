@@ -1,12 +1,17 @@
-{ pkgs, ... }:
+{ pkgs, terminal-wakatime, ... }:
 {
-  home.packages = with pkgs; [
-    fzf
-    ripgrep
+  home.packages =
+    with pkgs;
+    [
+      fzf
+      ripgrep
 
-    fd
-    sd
-  ];
+      fd
+      sd
+    ]
+    ++ [
+      terminal-wakatime.packages.x86_64-linux.default
+    ];
 
   programs.bash = {
     enable = true;
@@ -14,6 +19,7 @@
       "erasedups"
       "ignoreboth"
     ];
+    initExtra = "eval \"$(terminal-wakatime init)\"";
   };
 
   home.shellAliases = {

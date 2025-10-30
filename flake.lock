@@ -154,7 +154,8 @@
         "crabby-vim": "crabby-vim",
         "home-manager": "home-manager",
         "niri": "niri",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "terminal-wakatime": "terminal-wakatime"
       }
     },
     "systems": {
@@ -169,6 +170,26 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "terminal-wakatime": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1754391227,
+        "narHash": "sha256-dE1WrnqF2Yem/xnb7WZukgR5lqB/6sIjYWea2S/dGWk=",
+        "owner": "hackclub",
+        "repo": "terminal-wakatime",
+        "rev": "fc449de10be4395a1bf88a4089da032aafaf96cc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hackclub",
+        "repo": "terminal-wakatime",
         "type": "github"
       }
     },
