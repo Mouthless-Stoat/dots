@@ -3,12 +3,16 @@
   # git config
   programs.git = {
     enable = true;
-    aliases = {
-      co = "checkout";
-      st = "status";
+    settings = {
+      aliases = {
+        co = "checkout";
+        st = "status";
+      };
+      user = {
+        name = "Mouthless-Stoat";
+        email = "nphuyanh@outlook.com";
+      };
     };
-    userName = "Mouthless-Stoat";
-    userEmail = "nphuyanh@outlook.com";
     extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "manager";
