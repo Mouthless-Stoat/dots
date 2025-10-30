@@ -37,7 +37,9 @@
       };
     };
   };
+
   programs.rofi.enable = true; # app launcher
+  programs.zathura.enable = true;
 
   home.stateVersion = "25.05"; # same as the nixos version DO NOT CHANGE
 }
