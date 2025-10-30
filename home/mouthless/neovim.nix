@@ -12,6 +12,12 @@
     defaultEditor = true;
     extraPackages = with pkgs; [
       gcc
+      python315
+      nodejs_22
+      typstyle
+      prettier
+      unzip
+      rustfmt
     ];
   };
 
