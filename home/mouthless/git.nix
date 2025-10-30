@@ -12,8 +12,6 @@
         name = "Mouthless-Stoat";
         email = "nphuyanh@outlook.com";
       };
-    };
-    extraConfig = {
       init.defaultBranch = "main";
       credential.helper = "manager";
       credential.credentialStore = "plaintext";
