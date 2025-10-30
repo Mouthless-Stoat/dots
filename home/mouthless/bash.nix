@@ -26,6 +26,7 @@
     g = "lazygit";
     gst = "git status";
     rebuild = "cd ~/dots && sudo nix fmt && sudo nixos-rebuild";
+    h = "source <(history | sd \"^\\s*\\d+\\s*\" \"\" | sort | uniq | fzf)";
   };
   programs.zoxide.enable = true;
 
