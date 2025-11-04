@@ -28,11 +28,15 @@
     rebuild = "cd ~/dots && sudo nix fmt && sudo nixos-rebuild";
     h = "source <(history | sd \"^\\s*\\d+\\s*\" \"\" | sort | uniq | fzf)";
   };
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    options = [
+      "--cmd cd"
+    ];
+  };
 
   programs.eza = {
     enable = true;
     icons = "always";
-    extraOptions = [ "-a" ];
   };
 }
