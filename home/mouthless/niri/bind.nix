@@ -48,6 +48,7 @@ in
   "Mod+Period" = bind "Expel window" expel-window-from-column;
 
   "Mod+T" = bind "Open Terminal" (spawn "kitty");
+  "Mod+B" = bind "Open Browser" (spawn "firefox");
   "Mod+R" = bind "App Launcher" (spawn-sh "rofi -show drun");
 
 }
