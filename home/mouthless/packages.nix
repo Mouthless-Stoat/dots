@@ -5,9 +5,4 @@ pkgs: with pkgs; [
 
   steam-tui
   steamcmd
-
-  kitty
-  rofi
-  xwayland-satellite
-  brightnessctl
 ]
