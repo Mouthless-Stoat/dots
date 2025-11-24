@@ -43,7 +43,8 @@
   networking.networkmanager.enable = true; # use network manager to handle internet
   hardware.bluetooth.enable = true; # enable bluetooth
 
-  time.timeZone = "Etc/GMT+3";
+  time.timeZone = "Canada/Atlantic";
+  i18n.defaultLocale = "en_CA.UTF-8";
 
   # default user pog
   users.users.mouthless = {
