@@ -38,6 +38,8 @@ in
 
   "Mod+Q" = bind "Close window" close-window;
   "Mod+O" = bind "Toggle overview" toggle-overview;
+  "Mod+F" = bind "Toggle float" toggle-window-floating;
+  "Mod+Ctrl+F" = bind "Toggle Fullscreen" fullscreen-window;
 
   "Mod+1" = bind "Set width to 1/3" (set-window-width "33.33333%");
   "Mod+2" = bind "Set width to 1/2" (set-window-width "50%");
