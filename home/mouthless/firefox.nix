@@ -9,6 +9,7 @@
         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
         "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
         "browser.newtabpage.activity-stream.showSponsored" = false;
+        "sidebar.verticleTabs" = true;
         "extensions.pocket.enabled" = false;
       };
       userChrome = "
