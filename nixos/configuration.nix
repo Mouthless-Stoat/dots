@@ -11,6 +11,13 @@
     ./hardware-configuration.nix
   ];
 
+  nix.settings.trusted-users = [ "mouthless" ];
+  boot = {
+    binfmt.emulatedSystems = [
+      "aarch64-linux"
+    ];
+  };
+
   nixpkgs.config.allowUnfreePredicate =
     pkgs:
     builtins.elem (lib.getName pkgs) [
