@@ -99,7 +99,6 @@
     };
 
   programs.dconf.enable = true;
-  programs.steam.enable = true;
 
   services.upower.enable = true;
 
