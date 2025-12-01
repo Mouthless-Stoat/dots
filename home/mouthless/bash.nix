@@ -44,6 +44,7 @@
   programs.eza = {
     enable = true;
     icons = "always";
+    extraOptions = [ "-a" ];
   };
 
   home.file."${config.xdg.configHome}/omp/theme.toml".source = ./omp/theme.toml;
