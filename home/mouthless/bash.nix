@@ -31,7 +31,9 @@
     g = "lazygit";
     gst = "git status";
     rebuild = "cd ~/dots && sudo nix fmt && sudo nixos-rebuild";
+    sync = "cd ~/dots && nix flake update && rebuild test";
     h = "source <(history | sd \"^\\s*\\d+\\s*\" \"\" | sort | uniq | fzf)";
+    dev = "nix develop";
   };
 
   programs.zoxide = {
