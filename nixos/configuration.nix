@@ -21,11 +21,8 @@
   nixpkgs.config.allowUnfreePredicate =
     pkgs:
     builtins.elem (lib.getName pkgs) [
-      "steam"
-      "steam-original"
-      "steam-unwrapped"
-      "steam-run"
-      "steamcmd"
+      "nvidia-x11"
+      "nvidia-settings"
     ];
 
   # boot option
@@ -101,6 +98,32 @@
   programs.dconf.enable = true;
 
   services.upower.enable = true;
+
+  # nvidia bullshit
+
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+
+    open = true;
+
+    nvidiaSettings = true;
+
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+    prime = {
+      intelBusId = "PCI:0@0:2:0";
+      nvidiaBusId = "PCI:1@0:0:0";
+    };
+  };
+  services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.graphics = {
+    enable = true;
+
+    enable32Bit = true;
+  };
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }
