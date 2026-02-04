@@ -15,7 +15,7 @@ in
   "XF86MonBrightnessUp".action = spawn "brightnessctl" "--class=backlight" "set" "+5%";
   "XF86MonBrightnessDown".action = spawn "brightnessctl" "--class=backlight" "set" "5%-";
 
-  "Print".action.screenshot = [ ];
+  "Mod+S".action.screenshot = [ ];
 
   "Mod+Shift+Slash".action = show-hotkey-overlay;
 
