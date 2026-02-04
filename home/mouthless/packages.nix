@@ -3,6 +3,6 @@ pkgs: with pkgs; [
   pass
   gnupg
 
-  steam-tui
-  steamcmd
+  prismlauncher
+  kotlin
 ]
