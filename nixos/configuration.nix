@@ -113,8 +113,12 @@
     package = config.boot.kernelPackages.nvidiaPackages.stable;
 
     prime = {
-      intelBusId = "PCI:0@0:2:0";
-      nvidiaBusId = "PCI:1@0:0:0";
+      offload = {
+        enable = true;
+        enableOffloadCmd = true;
+      };
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
     };
   };
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -124,6 +128,15 @@
 
     enable32Bit = true;
   };
+
+  # Storage optimization
+  # taken from https://nixos.wiki/wiki/Storage_optimization
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
+  nix.optimise.automatic = true;
 
   system.stateVersion = "25.05"; # DO NOT CHANGE THIS MANUALLY
 }
