@@ -35,6 +35,16 @@
         default-window-height.proportion = 1. / 4.;
         open-floating = true;
       }
+
+      {
+        geometry-corner-radius = {
+          bottom-left = 8.;
+          bottom-right = 8.;
+          top-left = 8.;
+          top-right = 8.;
+        };
+        clip-to-geometry = true;
+      }
     ];
 
     layout = {
