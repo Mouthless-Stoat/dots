@@ -5,4 +5,6 @@ pkgs: with pkgs; [
 
   prismlauncher
   kotlin
+
+  nb
 ]
