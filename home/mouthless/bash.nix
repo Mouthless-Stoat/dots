@@ -24,7 +24,7 @@
       "erasedups"
       "ignoreboth"
     ];
-    initExtra = "eval \"$(terminal-wakatime init)\"";
+    initExtra = "eval \"$(terminal-wakatime init)\"\ncd ~/Desktop";
   };
 
   home.shellAliases = {
