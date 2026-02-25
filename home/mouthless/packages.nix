@@ -7,4 +7,6 @@ pkgs: with pkgs; [
   kotlin
 
   nb
+  pandoc
+  w3m
 ]
