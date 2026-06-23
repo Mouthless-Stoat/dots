@@ -13,6 +13,13 @@
 
       fd
       sd
+      unzip
+
+      nb # note taking assistance
+      pandoc # converter for nb
+      w3m # tui browser for nb
+
+      bluetui # bluetooth manager
     ]
     ++ [
       terminal-wakatime.packages.x86_64-linux.default
@@ -24,7 +31,9 @@
       "erasedups"
       "ignoreboth"
     ];
-    initExtra = "eval \"$(terminal-wakatime init)\"\ncd ~/Desktop";
+    initExtra = "
+        eval \"$(terminal-wakatime init)\"
+    ";
   };
 
   home.shellAliases = {
