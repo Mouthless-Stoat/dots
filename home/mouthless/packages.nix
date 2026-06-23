@@ -1,12 +1,7 @@
 pkgs: with pkgs; [
-  git-credential-manager
-  pass
-  gnupg
+  git-credential-manager # For automatic git sign in and stuff
 
-  prismlauncher
-  kotlin
-
-  nb
-  pandoc
-  w3m
+  prismlauncher # for minecraft gaming
+  aseprite # pixel art program
+  obs-studio # recording software
 ]

@@ -23,7 +23,13 @@
     builtins.elem (lib.getName pkgs) [
       "nvidia-x11"
       "nvidia-settings"
+
+      "steam"
+      "steam-unwrapped"
+      "aseprite"
     ];
+
+  programs.steam.enable = true;
 
   # boot option
   # this use grub so i can also dual boot window :D
@@ -45,7 +51,14 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true; # use network manager to handle internet
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 42069 ];
+    allowedUDPPorts = [ 42069 ];
+  };
+
   hardware.bluetooth.enable = true; # enable bluetooth
+  hardware.logitech.wireless.enable = true; # enable logitech udev rules and shit
 
   time.timeZone = "Canada/Atlantic";
   i18n.defaultLocale = "en_CA.UTF-8";
